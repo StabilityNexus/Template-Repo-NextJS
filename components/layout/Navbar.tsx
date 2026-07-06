@@ -1,0 +1,181 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useWallet } from '@/context/WalletContext';
+import {
+  Navbar as BaseNavbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+  NavbarButton,
+} from '@/components/ui/resizable-navbar';
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const { isConnected, address, network, setWalletModalOpen, disconnectWallet, switchNetwork } = useWallet();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [networkDropdownOpen, setNetworkDropdownOpen] = useState(false);
+
+  const networks = ['Ethereum', 'Base', 'Polygon', 'Arbitrum'];
+
+  const navItems = [
+    { name: 'Home', link: '/' },
+    { name: 'Dashboard', link: '/dashboard' },
+    { name: 'How It Works', link: '/how-it-works' },
+    { name: 'Stats', link: '/stats' },
+    { name: 'Keepers', link: '/keepers' },
+    { name: 'Support', link: '/support' },
+    { name: 'Docs', link: '/docs' },
+  ];
+
+  return (
+    <div className="relative w-full">
+      <BaseNavbar className="fixed top-6 left-0 right-0 z-50">
+        {/* Desktop Navigation using resizable NavBody */}
+        <NavBody className="glass-pill border border-neutral-100 bg-white/75 shadow-lg min-w-[768px]">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group cursor-pointer mr-6 shrink-0">
+            <div className="flex h-7.5 w-7.5 items-center justify-center rounded-full bg-black text-white font-bold text-sm">
+              W
+            </div>
+            <span className="font-sans text-sm font-bold tracking-tight text-black">
+              WINDMILL
+            </span>
+          </Link>
+
+          {/* Desktop Nav Items */}
+          <div className="flex-1 flex justify-center">
+            <NavItems items={navItems} />
+          </div>
+
+          {/* Wallet Actions / RainbowKit simulation */}
+          <div className="flex items-center gap-3 shrink-0 ml-6">
+            {isConnected ? (
+              <div className="flex items-center gap-2">
+                {/* Network select indicator */}
+                <div className="relative">
+                  <button
+                    onClick={() => setNetworkDropdownOpen(!networkDropdownOpen)}
+                    className="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-[10px] font-bold hover:bg-neutral-100 transition-colors uppercase tracking-wider text-black cursor-pointer"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    {network} ▾
+                  </button>
+                  {networkDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-32 rounded-2xl border border-neutral-200 bg-white p-1.5 shadow-2xl z-50">
+                      {networks.map((net) => (
+                        <button
+                          key={net}
+                          onClick={() => {
+                            switchNetwork(net);
+                            setNetworkDropdownOpen(false);
+                          }}
+                          className="w-full text-left rounded-xl px-3 py-1.5 text-[10px] font-semibold hover:bg-neutral-50 text-black transition-colors"
+                        >
+                          {net}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Connected Wallet Disconnect CTA */}
+                <NavbarButton
+                  onClick={disconnectWallet}
+                  variant="dark"
+                  className="rounded-full !px-4 !py-1.5 text-[10px] font-bold text-white bg-black hover:bg-neutral-800 transition-colors border-none"
+                >
+                  {address}
+                </NavbarButton>
+              </div>
+            ) : (
+              <NavbarButton
+                onClick={() => setWalletModalOpen(true)}
+                variant="dark"
+                className="rounded-full !px-4 !py-1.5 text-[10px] font-bold text-white bg-black hover:bg-neutral-800 transition-all duration-300 border-none shadow-sm"
+              >
+                Connect Wallet
+              </NavbarButton>
+            )}
+          </div>
+        </NavBody>
+
+        {/* Mobile Navigation */}
+        <MobileNav className="glass-pill border border-neutral-100 bg-white/75 shadow-lg w-full max-w-[calc(100vw-2rem)]">
+          <MobileNavHeader className="px-4 py-2">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2">
+              <div className="flex h-7.5 w-7.5 items-center justify-center rounded-full bg-black text-white font-bold text-sm">
+                W
+              </div>
+              <span className="font-sans text-sm font-bold tracking-tight text-black">
+                WINDMILL
+              </span>
+            </Link>
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
+
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+            className="bg-white/95 border border-neutral-100/50 backdrop-blur-xl p-6 rounded-2xl shadow-xl mt-4"
+          >
+            <div className="flex flex-col gap-4 w-full">
+              {navItems.map((item, idx) => (
+                <Link
+                  key={`mobile-link-${idx}`}
+                  href={item.link}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-neutral-600 hover:text-black font-semibold text-sm transition-colors py-1"
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              <div className="h-[1px] bg-neutral-100 my-2" />
+
+              {/* Wallet Button */}
+              {isConnected ? (
+                <div className="flex flex-col gap-3">
+                  <div className="flex justify-between items-center text-xs font-bold text-black border border-neutral-100 rounded-xl px-4 py-2.5 bg-neutral-50">
+                    <span>Network</span>
+                    <span className="text-neutral-500 uppercase tracking-wider">{network}</span>
+                  </div>
+                  <NavbarButton
+                    onClick={() => {
+                      disconnectWallet();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    variant="dark"
+                    className="w-full text-center py-2.5 rounded-xl text-xs"
+                  >
+                    Disconnect {address}
+                  </NavbarButton>
+                </div>
+              ) : (
+                <NavbarButton
+                  onClick={() => {
+                    setWalletModalOpen(true);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  variant="dark"
+                  className="w-full text-center py-2.5 rounded-xl text-xs"
+                >
+                  Connect Wallet
+                </NavbarButton>
+              )}
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </BaseNavbar>
+    </div>
+  );
+}
