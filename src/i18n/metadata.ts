@@ -1,0 +1,45 @@
+import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
+
+export async function generateLocaleMetadata(
+  locale: string,
+  namespace: string
+): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace });
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://project.aossie.org';
+
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        en: `${siteUrl}/en`,
+        hi: `${siteUrl}/hi`,
+      },
+    },
+    openGraph: {
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      url: `${siteUrl}/${locale}`,
+      siteName: 'AOSSIE',
+      images: [
+        {
+          url: `${siteUrl}/assets/icons/aossie_logo.svg`,
+          width: 500,
+          height: 500,
+          alt: 'AOSSIE Logo',
+        },
+      ],
+      locale: locale === 'en' ? 'en_US' : 'hi_IN',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      images: [`${siteUrl}/assets/icons/aossie_logo.svg`],
+    },
+  };
+}
