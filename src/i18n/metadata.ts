@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export async function generateLocaleMetadata(
   locale: string,
@@ -8,21 +8,23 @@ export async function generateLocaleMetadata(
   const t = await getTranslations({ locale, namespace });
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://project.aossie.org';
+  const localeUrl = locale === 'en' ? siteUrl : `${siteUrl}/${locale}`;
 
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `${siteUrl}/${locale}`,
+      canonical: localeUrl,
       languages: {
-        en: `${siteUrl}/en`,
+        en: siteUrl,
         hi: `${siteUrl}/hi`,
       },
     },
     openGraph: {
       title: t('metaTitle'),
       description: t('metaDescription'),
-      url: `${siteUrl}/${locale}`,
+      url: localeUrl,
+
       siteName: 'AOSSIE',
       images: [
         {

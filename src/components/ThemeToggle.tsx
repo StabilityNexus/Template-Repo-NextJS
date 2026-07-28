@@ -2,9 +2,11 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("ThemeToggle");
   const [mounted, setMounted] = useState(false);
 
   // Prevent hydration mismatch by waiting for mount
@@ -26,7 +28,8 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      aria-label="Toggle theme"
+      aria-label={t("toggleTheme")}
+
       className="flex items-center justify-center w-9 h-9 rounded-full border border-border-default bg-background-secondary hover:bg-background-primary text-foreground-muted shadow-sm transition-all focus:outline-none focus:ring-1 focus:ring-foreground-primary cursor-pointer"
     >
       {theme === "light" && (

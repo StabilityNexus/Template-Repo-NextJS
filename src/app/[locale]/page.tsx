@@ -20,7 +20,7 @@ export default function Home({
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "AOSSIE Webpage Starter",
-    "description": "A multi-lingual starter template for AOSSIE organizations built with Next.js 16 and React 19.",
+    "description": t("metaDescription"),
     "publisher": {
       "@type": "Organization",
       "name": "AOSSIE",
@@ -39,7 +39,8 @@ export default function Home({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card-shadow gap-6">
+      <main className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card gap-6">
+
         <Image
           src="/assets/icons/aossie_logo.svg"
           alt="AOSSIE Logo"

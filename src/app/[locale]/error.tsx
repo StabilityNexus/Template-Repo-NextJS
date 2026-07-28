@@ -18,8 +18,9 @@ export default function ErrorBoundary({
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background-primary text-foreground-primary font-sans transition-colors duration-200 p-6">
-      <div className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card-shadow gap-6 text-center">
-        <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-950/30 flex items-center justify-center text-red-600 dark:text-red-400">
+      <div className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card gap-6 text-center">
+        <div className="w-12 h-12 rounded-full bg-status-error-bg flex items-center justify-center text-status-error-text">
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

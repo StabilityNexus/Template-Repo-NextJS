@@ -52,7 +52,7 @@ In the checklist below, mark the items that have been completed for your project
    - [x] Has proper title and metadata.
    - [x] Has proper open graph metadata, to ensure that it is shown well when shared in social media.
    - [x] Has a footer and header with AOSSIE logos and social handles.
-   - [x] Is fully static and client-side (`"use client"` configured for pages).
+   - [x] Is client-side rendered (`"use client"` configured for pages).
    - [x] Is deployed to GitHub Pages via a GitHub Workflow (`.github/workflows/nextjs.yml`).
    - [x] Has automated CI build and lint validation (`.github/workflows/ci.yml`).
    - [x] Has CodeRabbit automated AI code review (`.coderabbit.yml`).
@@ -129,7 +129,7 @@ Here is a breakdown of the key i18n directories and files:
 
 To add support for a new language (e.g., French - `fr`):
 
-1. **Register the language:** Open [`src/config/languages.ts`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/config/languages.ts) and add your new language to the `languages` array:
+1. **Register the language:** Open [`src/config/languages.ts`](src/config/languages.ts) and add your new language to the `languages` array:
    ```typescript
    export const languages: Language[] = [
      { code: 'en', name: 'English', localName: 'English' },
@@ -138,7 +138,7 @@ To add support for a new language (e.g., French - `fr`):
    ];
    ```
 
-2. **Create the translation catalog:** Under `messages/`, create a new file named `fr.json`:
+2. **Create the translation catalog:** Under `src/messages/`, create a new file named `fr.json`:
    ```json
    {
      "Home": {
@@ -161,7 +161,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Section() {
   const t = useTranslations('Home');
-  return <h1>{t('title')}</h1>;
+  return <h1>{t('heading')}</h1>;
 }
 ```
 
@@ -183,7 +183,7 @@ export default function InteractiveButton() {
 
 ### 3. Navigation Helpers
 
-When navigating between routes, always use the locale-aware navigation helpers imported from [`src/i18n/navigation.ts`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/i18n/navigation.ts) instead of standard `next/link` or `next/navigation`:
+When navigating between routes, always use the locale-aware navigation helpers imported from [`src/i18n/navigation.ts`](src/i18n/navigation.ts) instead of standard `next/link` or `next/navigation`:
 
 ```tsx
 import { Link } from '../../i18n/navigation';
@@ -210,28 +210,26 @@ router.replace(pathname, { locale: 'hi' });
 The starter kit uses `next-themes` combined with Tailwind CSS v4's class-based custom variants to provide a responsive and flash-free theme experience.
 
 #### Customizing Colors
-Tailwind v4 is configured via CSS custom properties in [`src/app/[locale]/globals.css`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/app/[locale]/globals.css). To adjust the default light and dark theme background or text colors, edit the root variables:
+Tailwind v4 is configured via CSS custom properties in [`src/app/[locale]/globals.css`](src/app/[locale]/globals.css). To adjust the default light and dark theme background or text colors, edit the root variables:
 
 ```css
 :root {
   --background: #ffffff; /* Light theme background */
-  --foreground: #171717; /* Light theme text */
+  --foreground: #121212; /* Light theme text */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a; /* Dark theme background */
-    --foreground: #ededed; /* Dark theme text */
-  }
+.dark {
+  --background: #0a0a0a; /* Dark theme background */
+  --foreground: #f4f4f5; /* Dark theme text */
 }
 ```
 
 #### Using Theme Classes
-To create element styles that adapt automatically to the user's selected theme, use the `dark:` utility modifier:
+To create element styles that adapt automatically to the user's selected theme, use semantic utility tokens instead of inline `dark:` utilities:
 
 ```tsx
-<div className="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
-  This card automatically transitions colors.
+<div className="bg-background-secondary text-foreground-primary border border-border-default">
+  This card automatically transitions colors across light and dark themes.
 </div>
 ```
 
@@ -242,7 +240,7 @@ To create element styles that adapt automatically to the user's selected theme, 
 The starter repository integrates the `lenis` library to provide smooth, high-performance inertial scrolling across all browsers.
 
 #### Customizing Lenis Options
-To configure scroll parameters (e.g., dampening velocity, custom scroll durations, or scroll directions), update the parameters passed to the `ReactLenis` component in [`lenis-provider.tsx`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/components/providers/lenis-provider.tsx):
+To configure scroll parameters (e.g., dampening velocity, custom scroll durations, or scroll directions), update the parameters passed to the `ReactLenis` component in [`lenis-provider.tsx`](src/components/providers/lenis-provider.tsx):
 
 ```tsx
 <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
@@ -301,20 +299,21 @@ npm run start
 When bootstrapping a new project from this starter repository, update the following configurations to align with your project's branding, package naming, and hosting domains:
 
 ### 1. Domain Names & Sitemap URL
-- **Sitemap Generator ([`src/app/sitemap.ts`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/app/sitemap.ts))**: Replace the default fallback domain `https://project.aossie.org` with your project's production domain, or set the `NEXT_PUBLIC_SITE_URL` environment variable in your production hosting panel.
-- **Search Crawler Rules ([`public/robots.txt`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/public/robots.txt))**: Replace the sitemap URL domain `https://project.aossie.org/sitemap.xml` with your production URL.
+- **Sitemap Generator ([`src/app/sitemap.ts`](src/app/sitemap.ts))**: Replace the default fallback domain `https://project.aossie.org` with your project's production domain, or set the `NEXT_PUBLIC_SITE_URL` environment variable in your production hosting panel.
+- **Search Crawler Rules ([`public/robots.txt`](public/robots.txt))**: Replace the sitemap URL domain `https://project.aossie.org/sitemap.xml` with your production URL.
 
 ### 2. Branding Guidelines & Assets
-- **Logo & Favicons ([`brand/`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/brand/))**: Replace `logo.svg` and `favicon.ico` with your organization's custom logos. Copy these updated assets to the [`public/assets/icons/`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/public/assets/icons/) directory as well (`public/assets/icons/aossie_logo.svg` and `public/assets/icons/favicon.ico`).
-- **Brand Documentation ([`brand/Brand.md`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/brand/Brand.md))**: Document your custom color hex codes, typography selections, and asset paths here to guide future developers and AI coding agents.
+- **Logo & Favicons ([`brand/`](brand/))**: Replace `logo.svg` and `favicon.ico` with your organization's custom logos. Copy these updated assets to the [`public/assets/icons/`](public/assets/icons/) directory as well (`public/assets/icons/aossie_logo.svg` and `public/assets/icons/favicon.ico`).
+- **Brand Documentation ([`brand/Brand.md`](brand/Brand.md))**: Document your custom color hex codes, typography selections, and asset paths here to guide future developers and AI coding agents.
 
 ### 3. SEO Structured Data
-- **Schema.org JSON-LD ([`src/app/[locale]/page.tsx`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/src/app/[locale]/page.tsx))**: Locate the `jsonLd` object inside the `Home` component. Replace the default publisher URLs and name fields with your specific project metadata.
+- **Schema.org JSON-LD ([`src/app/[locale]/page.tsx`](src/app/[locale]/page.tsx))**: Locate the `jsonLd` object inside the `Home` component. Replace the default publisher URLs and name fields with your specific project metadata.
 
 ### 4. Mobile & AI Platform Configurations
-- **Android App Links ([`public/.well-known/assetlinks.json`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/public/.well-known/assetlinks.json))**: Change the package name `org.aossie.starter` and insert your Android application certificate SHA-256 fingerprint to handle incoming domain links on mobile.
-- **AI Agent Plugins ([`public/.well-known/ai-plugin.json`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/public/.well-known/ai-plugin.json))**: Update the host URLs, contact emails, and description text to describe your final website's features to AI agents.
-- **LLM Crawler Rules ([`public/llms.txt`](file:///x:/Work/Dev/AOSSIE/Template-Repo-NextJS/public/llms.txt))**: Serves the root crawlers policy indicating allowing LLM bot indexing. Update if you wish to block specific AI search engines.
+- **Android App Links ([`public/.well-known/assetlinks.json`](public/.well-known/assetlinks.json))**: Change the package name `org.aossie.starter` and insert your Android application certificate SHA-256 fingerprint to handle incoming domain links on mobile.
+- **AI Agent Plugins ([`public/.well-known/ai-plugin.json`](public/.well-known/ai-plugin.json))**: Update the host URLs, contact emails, and description text to describe your final website's features to AI agents.
+- **LLM Crawler Rules ([`public/llms.txt`](public/llms.txt))**: Serves the root crawlers policy indicating allowing LLM bot indexing. Update if you wish to block specific AI search engines.
+
 
 ---
 

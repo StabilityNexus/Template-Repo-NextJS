@@ -20,7 +20,12 @@
 
   --color-card-bg: var(--card-bg);
   --color-card-border: var(--card-border);
-  --color-card-shadow: var(--card-shadow);
+  --shadow-card: var(--card-shadow);
+
+  --color-status-error-bg: var(--status-error-bg);
+  --color-status-error-text: var(--status-error-text);
+  --color-status-neutral-bg: var(--status-neutral-bg);
+  --color-status-neutral-text: var(--status-neutral-text);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -45,6 +50,11 @@
   --card-bg: rgba(255, 255, 255, 0.85);
   --card-border: #e2e2e7;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  --status-error-bg: #fee2e2;
+  --status-error-text: #dc2626;
+  --status-neutral-bg: #f4f4f5;
+  --status-neutral-text: #52525b;
 }
 
 /* --- DARK MODE --- */
@@ -67,7 +77,13 @@
   --card-bg: rgba(22, 22, 22, 0.85);
   --card-border: #1e1e24;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  --status-error-bg: rgba(69, 10, 10, 0.5);
+  --status-error-text: #f87171;
+  --status-neutral-bg: #27272a;
+  --status-neutral-text: #a1a1aa;
 }
+
 
 /* --- GLOBAL STYLES --- */
 html,

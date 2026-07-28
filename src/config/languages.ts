@@ -4,9 +4,12 @@ export interface Language {
   localName: string;
 }
 
-export const languages: Language[] = [
+export const languages = [
   { code: 'en', name: 'English', localName: 'English' },
-  { code: 'hi', name: 'Hindi', localName: 'हिन्दी' }
-];
+  { code: 'hi', name: 'Hindi', localName: 'हिन्दी' },
+] as const satisfies readonly Language[];
 
-export const defaultLanguage = 'en';
+export type Locale = (typeof languages)[number]['code'];
+
+export const defaultLanguage: Locale = 'en';
+

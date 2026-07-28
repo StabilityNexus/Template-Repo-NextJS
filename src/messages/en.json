@@ -13,5 +13,12 @@
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has been moved.",
     "home": "Go to Home"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Toggle theme"
   }
 }
+

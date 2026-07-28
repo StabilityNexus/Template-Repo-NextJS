@@ -22,13 +22,13 @@ The AOSSIE color scheme is inspired by Australia's national colors and reflects 
 
 ### 1. Brand Logo
 The official vector logo is stored in the repository in **SVG** format:
-- **Project Folder:** [logo.svg](file:///x:/Work/Dev/AOSSIE/webpage-starter/brand/logo.svg)
-- **Web App Asset:** [aossie_logo.svg](file:///x:/Work/Dev/AOSSIE/webpage-starter/public/assets/icons/aossie_logo.svg)
+- **Project Folder:** [logo.svg](brand/logo.svg)
+- **Web App Asset:** [aossie_logo.svg](public/assets/icons/aossie_logo.svg)
 
 ### 2. Favicons & Icons
 The standard web browser tab icon is stored as a multi-resolution ICO file:
-- **Project Folder:** [favicon.ico](file:///x:/Work/Dev/AOSSIE/webpage-starter/brand/favicon.ico)
-- **Web App Asset:** [favicon.ico](file:///x:/Work/Dev/AOSSIE/webpage-starter/public/assets/icons/favicon.ico)
+- **Project Folder:** [favicon.ico](brand/favicon.ico)
+- **Web App Asset:** [favicon.ico](public/assets/icons/favicon.ico)
 
 ---
 
@@ -36,4 +36,5 @@ The standard web browser tab icon is stored as a multi-resolution ICO file:
 
 - **Default Font Family:** **Inter**
 - **Fallback Stack:** `ui-sans-serif, system-ui, sans-serif`
-- **Configuration:** Set globally via Tailwind CSS v4 custom theme bindings inside [`globals.css`](file:///x:/Work/Dev/AOSSIE/webpage-starter/src/app/[locale]/globals.css) and loaded asynchronously in the root layout via Next.js Google Font optimizer.
+- **Configuration:** Set globally via Tailwind CSS v4 custom theme bindings inside [`globals.css`](src/app/[locale]/globals.css) and loaded asynchronously in the root layout via Next.js Google Font optimizer.
+

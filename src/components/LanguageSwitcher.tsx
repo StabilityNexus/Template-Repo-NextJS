@@ -3,12 +3,13 @@
 import { useTransition } from "react";
 import { useRouter, usePathname } from "../i18n/navigation";
 import { languages } from "../config/languages";
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
+  const t = useTranslations("LanguageSwitcher");
   const [isPending, startTransition] = useTransition();
 
   const handleLanguageChange = (newLocale: string) => {
@@ -20,8 +21,9 @@ export default function LanguageSwitcher() {
   return (
     <div className="flex gap-2 items-center">
       <label htmlFor="language-select" className="text-sm font-medium text-foreground-muted">
-        Language / भाषा:
+        {t("label")}:
       </label>
+
       <select
         id="language-select"
         value={locale}
