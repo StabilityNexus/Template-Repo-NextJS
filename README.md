@@ -26,20 +26,21 @@
 <a href="https://x.com/aossie_org">
 <img src="https://img.shields.io/twitter/follow/aossie_org" alt="X Badge"/></a>
 &nbsp;&nbsp;
-<!-- Discord -->
+<!-- Discord AOSSIE-->
 <a href="https://discord.gg/hjUhu33uAn">
 <img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord&labelColor=5865F2&color=57F287" alt="Discord AOSSIE"/></a>
-</p>
+<!-- Discord Stability Nexus-->
 <a href="https://discord.gg/YzDKeEfWtS">
 <img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord&labelColor=5865F2&color=57F287" alt="Discord Stability Nexus"/></a>
-</p>
 &nbsp;&nbsp;
 <!-- LinkedIn -->
 <a href="https://www.linkedin.com/company/aossie/">
   <img src="https://img.shields.io/badge/LinkedIn-black?style=flat&logo=LinkedIn&logoColor=white&logoSize=auto&color=0A66C2" alt="LinkedIn Badge"></a>
 &nbsp;&nbsp;
-<!-- Youtube -->
+<!-- Youtube AOSSIE-->
 <a href="https://www.youtube.com/@AOSSIE-Org">
+  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Badge"></a>
+<a href="https://www.youtube.com/@StabilityNexus">
   <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Badge"></a>
 </p>
 
@@ -47,12 +48,31 @@
 ---
 
 <div align="center">
-<h1>AOSSIE Webpage Starter</h1>
+<h1>TODO: Project Name (AOSSIE Webpage Starter)</h1>
 </div>
+
+[TODO](https://TODO.aossie.org/) is a ... TODO: Project Description.
 
 A high-performance, developer-friendly webpage starter kit built on **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and pre-configured for **Internationalization (i18n)** and **Localization (l10n)** using **next-intl**.
 
 This starter is designed for organizations looking to kickstart their web presence with a fully accessible, multi-lingual, and responsive architecture out-of-the-box.
+
+---
+
+## 🚀 Features
+
+TODO: List your main features here:
+
+- **Feature 1**: Description
+- **Feature 2**: Description
+- **Feature 3**: Description
+- **Feature 4**: Description
+
+---
+
+## 💻 Tech Stack
+
+TODO: Update based on your project
 
 ---
 
