@@ -1,0 +1,24 @@
+{
+  "Home": {
+    "heading": "Aossie Webpage Starter",
+    "metaTitle": "Aossie Webpage Starter - Multi-lingual Next.js 16 Template",
+    "metaDescription": "A starter template for Aossie portals featuring next-intl i18n/l10n and next-themes light/dark theme switcher."
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "An unexpected server or client error occurred while rendering the page.",
+    "retry": "Try again"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "home": "Go to Home"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Toggle theme"
+  }
+}
+
