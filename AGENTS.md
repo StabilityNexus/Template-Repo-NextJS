@@ -26,7 +26,7 @@ Project specific context and directives for AI agents.
 
 ## 🌐 i18n & l10n Routing
 
-- **Dynamic segement:** All localized pages and layouts must be nested inside [`src/app/[locale]/`](src/app/[locale]/).
+- **Dynamic segment:** All localized pages and layouts must be nested inside [`src/app/[locale]/`](src/app/[locale]/).
 - **Awaiting params:** Layout and Page `params` props are Promises in Next.js 15/16. Always `await params` before accessing `locale`.
 - **Navigation:** Never import `Link`, `useRouter`, or `usePathname` from standard `next/link` or `next/navigation`. Always import them from local configuration helpers in [`src/i18n/navigation.ts`](src/i18n/navigation.ts).
 

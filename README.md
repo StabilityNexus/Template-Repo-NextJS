@@ -3,8 +3,9 @@
 
 <!-- Organization Logo -->
 <div align="center" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
-  <img alt="AOSSIE" src="brand/logo.svg" width="175">
-  <img src="public/todo-project-logo.svg" width="175" />
+  <img src="brand/logo.svg" width="175" alt="AOSSIE logo" >
+  <img src="public/todo-project-logo.svg" width="175" alt="Template project logo" />
+
 </div>
 
 &nbsp;
