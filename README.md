@@ -97,7 +97,7 @@ In the checklist below, mark the items that have been completed for your project
 
 - **Next.js 16 & React 19:** Utilizing the latest Server Components, Client Actions, and async routing paradigms.
 - **Tailwind CSS v4:** Modern utility-first styling with native CSS variables and streamlined postcss integrations.
-- **Dual Theme System:** Flash-free light, dark, and system preferred themes using `next-themes` and Tailwind CSS v4 custom variants.
+- **Dual Theme System:** Flash-free light, dark, and system-preferred themes using `next-themes` and Tailwind CSS v4 custom variants.
 - **Robust i18n & l10n:** Deeply integrated multi-language support:
   - Automatic locale detection based on browser preferences.
   - Subpath routing (e.g., `/hi` for Hindi, and unprefixed `/` for English as default) with clean `as-needed` URL prefixing.
@@ -341,24 +341,29 @@ npm run start
 When bootstrapping a new project from this starter repository, complete the following `TODO` setup checklist to align the repository with your project's branding, metadata, AI agent guidelines, and hosting configurations:
 
 ### 1. Project Identity & Header Details
+
 - **Project Title & Logo ([`README.md`](README.md))**: Update the main project header logo (`public/todo-project-logo.svg`), title `<h1>TODO: Project Name</h1>`, project description, feature list, and tech stack.
 - **AI Agent Context ([`AGENTS.md`](AGENTS.md))**: Replace `# TODO: Project Title` and add project-specific directives and rules for AI coding agents.
 - **LLM Manifest ([`public/llms.txt`](public/llms.txt))**: Update `# TODO: Project Title` in the root LLM crawler policy.
 - **Community & Social Links ([`Contributors.md`](Contributors.md))**: Replace the `[TODO Channel](TODO)` placeholder with your project's Discord, Telegram, or chat channel link.
 
 ### 2. Domain Names & Search Engine Crawlers
+
 - **Sitemap Generator ([`src/app/sitemap.ts`](src/app/sitemap.ts))**: Replace the default fallback domain `https://project.aossie.org` with your project's production domain in the source code or set the `NEXT_PUBLIC_SITE_URL` environment variable at build time (e.g., in `.github/workflows/nextjs.yml` or build pipeline settings).
-- **Search Crawler Rules ([`public/robots.txt`](public/robots.txt))**: Replace the sitemap URL placeholder domain `TODO:'project.aossie.org'` with your actual production domain.
+- **Search Crawler Rules ([`public/robots.txt`](public/robots.txt))**: Replace the sitemap URL placeholder domain `TODO 'project.aossie.org'` with your actual production domain.
 
 ### 3. Branding Guidelines & Assets
+
 - **Logo & Favicons ([`public/brand/icons/`](public/brand/icons/))**: Replace `aossie_logo.svg` and `favicon.ico` with your organization's custom logos.
 - **Brand Documentation ([`public/brand/Brand.md`](public/brand/Brand.md))**: Document your custom color hex codes, typography selections, and asset paths here to guide future developers and AI coding agents.
 
 ### 4. SEO & i18n Localization Metadata
+
 - **Schema.org JSON-LD ([`src/app/[locale]/page.tsx`](src/app/[locale]/page.tsx))**: Locate the `jsonLd` object inside the `Home` component. Update the `publisher.name`, `publisher.url`, and `publisher.logo` fields from `TODO` placeholders to your project metadata.
 - **Translation Catalogs ([`src/messages/en.json`](src/messages/en.json), [`src/messages/hi.json`](src/messages/hi.json))**: Update the `heading`, `metaTitle`, and `metaDescription` keys with your project's localized titles and descriptions.
 
 ### 5. Mobile & AI Platform Configurations
+
 - **Android App Links ([`public/.well-known/assetlinks.json`](public/.well-known/assetlinks.json))**: Update the package name `TODO:org.aossie.starter` and insert your Android application certificate SHA-256 fingerprint (`TODO:...`).
 - **AI Agent Plugins ([`public/.well-known/ai-plugin.json`](public/.well-known/ai-plugin.json))**: Replace all `TODO` placeholders for `name_for_human`, `name_for_model`, `description_for_human`, `description_for_model`, host URLs, contact emails, and legal info links.
 

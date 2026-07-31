@@ -6,7 +6,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # TODO: Project Title
 
-TODO: Project specific context and directives for AI agents.
+TODO: Project-specific context and directives for AI agents.
 
 ## 🛠️ Stack & Commands
 

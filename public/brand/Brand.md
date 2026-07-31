@@ -1,32 +1,36 @@
-# AOSSIE Brand Guidelines
+# Brand Guidelines
 
-This document details the visual identity guidelines for **AOSSIE** (Australian Open Source Software Innovation and Education).
+This document details the visual identity guidelines for **TODO: Project Name** as well as the parent **AOSSIE** organization.
 
 ---
 
-## 🎨 Color Palette
+## 🎨 TODO: Project Color Palette
 
-The AOSSIE color scheme is inspired by Australia's national colors and reflects the organization's roots.
+Define your project's custom color palette below:
 
 | Color Name | Color Sample | HEX Code | RGB Code | Role |
 | :--- | :--- | :--- | :--- | :--- |
-| **Golden Wallet** | 🟡 | `#FFCD00` | `rgb(255, 205, 0)` | Primary Brand Color |
-| **Baggy Green** | 🟢 | `#00843D` | `rgb(0, 132, 61)` | Secondary Brand Color |
+| **TODO: Primary Color** | 🟦 | `#000000` | `rgb(0, 0, 0)` | Primary Project Color |
+| **TODO: Secondary Color** | 🟩 | `#000000` | `rgb(0, 0, 0)` | Secondary Project Color |
 | **Neutral Dark** | ⬛ | `#121212` | `rgb(18, 18, 18)` | Dark Layouts & Text |
 | **Neutral Light** | ⬜ | `#FFFFFF` | `rgb(255, 255, 255)` | Light Layouts & Text |
 | **Neutral Muted** | 🔘 | `#7A7A7A` | `rgb(122, 122, 122)` | Borders & Muted Text |
 
 ---
 
-## 👁️ Visual Assets
+## 👁️ TODO: Project Visual Assets
 
-### 1. Brand Logo
-The official vector logo is stored in the repository in **SVG** format:
-- **Branding Asset:** [aossie_logo.svg](icons/aossie_logo.svg)
+### 1. Project Logo
+
+The official vector logo for this project:
+
+- **Branding Asset:** [todo-project-logo.svg](icons/aossie_logo.svg)
 - **Web App Asset Path:** `/brand/icons/aossie_logo.svg`
 
-### 2. Favicons & Icons
-The standard web browser tab icon is stored as a multi-resolution ICO file:
+### 2. Project Favicon & Icons
+
+The browser tab favicon for this project:
+
 - **Branding Asset:** [favicon.ico](icons/favicon.ico)
 - **Web App Asset Path:** `/brand/icons/favicon.ico`
 
@@ -38,3 +42,20 @@ The standard web browser tab icon is stored as a multi-resolution ICO file:
 - **Fallback Stack:** `ui-sans-serif, system-ui, sans-serif`
 - **Configuration:** Set globally via Tailwind CSS v4 custom theme bindings inside [`globals.css`](src/app/[locale]/globals.css) and loaded asynchronously in the root layout via Next.js Google Font optimizer.
 
+---
+
+## 🏛️ AOSSIE Organization Branding
+
+The parent organization (AOSSIE - Australian Open Source Software Innovation and Education) branding guidelines:
+
+### Color Palette
+
+| Color Name | Color Sample | HEX Code | RGB Code | Role |
+| :--- | :--- | :--- | :--- | :--- |
+| **Golden Wallet** | 🟡 | `#FFCD00` | `rgb(255, 205, 0)` | Primary Brand Color |
+| **Baggy Green** | 🟢 | `#00843D` | `rgb(0, 132, 61)` | Secondary Brand Color |
+
+### Organization Assets
+
+- **AOSSIE Logo:** [aossie_logo.svg](icons/aossie_logo.svg) (`/brand/icons/aossie_logo.svg`)
+- **Stability Nexus Logo:** [stability_nexus_logo.svg](icons/stability_nexus_logo.svg) (`/brand/icons/stability_nexus_logo.svg`)

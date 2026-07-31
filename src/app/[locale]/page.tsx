@@ -1,26 +1,23 @@
-"use client";
-
 import Image from "next/image";
 import Script from "next/script";
-import { useTranslations } from "next-intl";
-import { use } from "react";
+import { getTranslations } from "next-intl/server";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
 
-export default function Home({
+export default async function Home({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = use(params);
-  const t = useTranslations("Home");
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Home" });
 
   // Schema.org Structured Data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": t("TODO:heading"),
-    "description": t("TODO:metaDescription"),
+    "name": t("heading"),
+    "description": t("metaDescription"),
     "publisher": {
       "@type": "Organization",
       "name": "TODO:AOSSIE",
@@ -62,5 +59,3 @@ export default function Home({
     </div>
   );
 }
-
-
