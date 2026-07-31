@@ -4,8 +4,8 @@ import Image from "next/image";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { use } from "react";
-import LanguageSwitcher from "../../components/LanguageSwitcher";
-import ThemeToggle from "../../components/ThemeToggle";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home({
   params,
@@ -19,13 +19,13 @@ export default function Home({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "AOSSIE Webpage Starter",
-    "description": t("metaDescription"),
+    "name": t("TODO:heading"),
+    "description": t("TODO:metaDescription"),
     "publisher": {
       "@type": "Organization",
-      "name": "AOSSIE",
-      "url": "https://aossie.org",
-      "logo": "https://aossie.org/assets/icons/aossie_logo.svg",
+      "name": "TODO:AOSSIE",
+      "url": "https://TODO.project.aossie.org",
+      "logo": "https://TODO.project.aossie.org/brand/icons/aossie_logo.svg",
     },
     "inLanguage": locale,
   };
@@ -42,7 +42,7 @@ export default function Home({
       <main className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card gap-6">
 
         <Image
-          src="/assets/icons/aossie_logo.svg"
+          src="/brand/icons/aossie_logo.svg"
           alt="AOSSIE Logo"
           width={80}
           height={80}

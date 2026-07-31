@@ -22,13 +22,13 @@ The AOSSIE color scheme is inspired by Australia's national colors and reflects 
 
 ### 1. Brand Logo
 The official vector logo is stored in the repository in **SVG** format:
-- **Project Folder:** [logo.svg](brand/logo.svg)
-- **Web App Asset:** [aossie_logo.svg](public/assets/icons/aossie_logo.svg)
+- **Branding Asset:** [aossie_logo.svg](icons/aossie_logo.svg)
+- **Web App Asset Path:** `/brand/icons/aossie_logo.svg`
 
 ### 2. Favicons & Icons
 The standard web browser tab icon is stored as a multi-resolution ICO file:
-- **Project Folder:** [favicon.ico](brand/favicon.ico)
-- **Web App Asset:** [favicon.ico](public/assets/icons/favicon.ico)
+- **Branding Asset:** [favicon.ico](icons/favicon.ico)
+- **Web App Asset Path:** `/brand/icons/favicon.ico`
 
 ---
 

@@ -30,7 +30,7 @@ export async function generateLocaleMetadata(
       siteName: 'AOSSIE',
       images: [
         {
-          url: `${siteUrl}/assets/icons/aossie_logo.svg`,
+          url: `${siteUrl}/brand/icons/aossie_logo.svg`,
           width: 500,
           height: 500,
           alt: 'AOSSIE Logo',
@@ -43,7 +43,7 @@ export async function generateLocaleMetadata(
       card: 'summary_large_image',
       title: t('metaTitle'),
       description: t('metaDescription'),
-      images: [`${siteUrl}/assets/icons/aossie_logo.svg`],
+      images: [`${siteUrl}/brand/icons/aossie_logo.svg`],
     },
   };
 }

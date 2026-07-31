@@ -27,6 +27,7 @@ export default function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
       aria-label={t("toggleTheme")}
 
@@ -39,7 +40,7 @@ export default function ThemeToggle() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-5 h-5 text-amber-500 animate-[spin_0.3s_ease-out]"
+          className="w-5 h-5 text-icon-sun animate-[spin_0.3s_ease-out]"
         >
           <path
             strokeLinecap="round"
@@ -56,7 +57,7 @@ export default function ThemeToggle() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-5 h-5 text-indigo-400 animate-[bounce_0.3s_ease-out]"
+          className="w-5 h-5 text-icon-moon animate-[bounce_0.3s_ease-out]"
         >
           <path
             strokeLinecap="round"
@@ -73,7 +74,7 @@ export default function ThemeToggle() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-5 h-5 text-zinc-500 animate-[pulse_1s_infinite]"
+          className="w-5 h-5 text-icon-system animate-[pulse_1s_infinite]"
         >
           <path
             strokeLinecap="round"

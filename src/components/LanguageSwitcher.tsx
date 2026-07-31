@@ -1,8 +1,8 @@
 "use client";
 
 import { useTransition } from "react";
-import { useRouter, usePathname } from "../i18n/navigation";
-import { languages } from "../config/languages";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { languages } from "@/config/languages";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function LanguageSwitcher() {

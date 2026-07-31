@@ -1,18 +1,18 @@
 {
   "schema_version": "v1",
-  "name_for_human": "AOSSIE Webpage Starter",
-  "name_for_model": "aossie_webpage_starter",
-  "description_for_human": "Starter template for AOSSIE web portals showing internationalization and custom theme toggles.",
-  "description_for_model": "Retrieve settings, theme configuration, and supported locales from the AOSSIE webpage starter.",
+  "name_for_human": "TODO Project name (AOSSIE Webpage Starter)",
+  "name_for_model": "todo_project_name (aossie_webpage_starter)",
+  "description_for_human": "TODO Project description (AOSSIE Webpage Starter)",
+  "description_for_model": "Retrieve settings, theme configuration, and supported locales from the TODO: Project (AOSSIE webpage starter).",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://aossie.org/openapi.yaml",
+    "url": "https://TODO.project.aossie.org/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://aossie.org/assets/icons/aossie_logo.svg",
+  "logo_url": "https://TODO.project.aossie.org/brand/icons/aossie_logo.svg",
   "contact_email": "admin@aossie.org",
-  "legal_info_url": "https://aossie.org/legal"
+  "legal_info_url": "https://TODO.project.aossie.org/legal"
 }
