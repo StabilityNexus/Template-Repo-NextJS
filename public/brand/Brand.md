@@ -12,9 +12,6 @@ Define your project's custom color palette below:
 | :--- | :--- | :--- | :--- | :--- |
 | **TODO: Primary Color** | 🟦 | `#000000` | `rgb(0, 0, 0)` | Primary Project Color |
 | **TODO: Secondary Color** | 🟩 | `#000000` | `rgb(0, 0, 0)` | Secondary Project Color |
-| **Neutral Dark** | ⬛ | `#121212` | `rgb(18, 18, 18)` | Dark Layouts & Text |
-| **Neutral Light** | ⬜ | `#FFFFFF` | `rgb(255, 255, 255)` | Light Layouts & Text |
-| **Neutral Muted** | 🔘 | `#7A7A7A` | `rgb(122, 122, 122)` | Borders & Muted Text |
 
 ---
 
@@ -24,14 +21,14 @@ Define your project's custom color palette below:
 
 The official vector logo for this project:
 
-- **Branding Asset:** [todo-project-logo.svg](icons/aossie_logo.svg)
+- **Branding Asset:** [todo-project-logo.svg](brand/icons/todo_project_logo.svg)
 - **Web App Asset Path:** `/brand/icons/aossie_logo.svg`
 
 ### 2. Project Favicon & Icons
 
 The browser tab favicon for this project:
 
-- **Branding Asset:** [favicon.ico](icons/favicon.ico)
+- **Branding Asset:** [todo-project-favicon.ico](brand/icons/todo_project_favicon.ico)
 - **Web App Asset Path:** `/brand/icons/favicon.ico`
 
 ---
@@ -54,8 +51,11 @@ The parent organization (AOSSIE - Australian Open Source Software Innovation and
 | :--- | :--- | :--- | :--- | :--- |
 | **Golden Wallet** | 🟡 | `#FFCD00` | `rgb(255, 205, 0)` | Primary Brand Color |
 | **Baggy Green** | 🟢 | `#00843D` | `rgb(0, 132, 61)` | Secondary Brand Color |
+| **Neutral Dark** | ⬛ | `#121212` | `rgb(18, 18, 18)` | Dark Layouts & Text |
+| **Neutral Light** | ⬜ | `#FFFFFF` | `rgb(255, 255, 255)` | Light Layouts & Text |
+| **Neutral Muted** | 🔘 | `#7A7A7A` | `rgb(122, 122, 122)` | Borders & Muted Text |
 
 ### Organization Assets
 
-- **AOSSIE Logo:** [aossie_logo.svg](icons/aossie_logo.svg) (`/brand/icons/aossie_logo.svg`)
-- **Stability Nexus Logo:** [stability_nexus_logo.svg](icons/stability_nexus_logo.svg) (`/brand/icons/stability_nexus_logo.svg`)
+- **AOSSIE Logo:** [aossie_logo.svg](brand/icons/aossie_logo.svg) (`/brand/icons/aossie_logo.svg`)
+- **Stability Nexus Logo:** [stability_nexus_logo.svg](brand/icons/stability_nexus_logo.svg) (`/brand/icons/stability_nexus_logo.svg`)
