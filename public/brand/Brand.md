@@ -21,8 +21,8 @@ Define your project's custom color palette below:
 
 The official vector logo for this project:
 
-- **Branding Asset:** [todo-project-logo.svg](brand/icons/todo_project_logo.svg)
-- **Web App Asset Path:** `/brand/icons/aossie_logo.svg`
+- **Branding Asset:** [todo-project-logo.svg](icons/todo-project-logo.svg)
+- **Web App Asset Path:** `/brand/icons/todo-project-logo.svg`
 
 ### 2. Project Favicon & Icons
 

@@ -342,7 +342,7 @@ When bootstrapping a new project from this starter repository, complete the foll
 
 ### 1. Project Identity & Header Details
 
-- **Project Title & Logo ([`README.md`](README.md))**: Update the main project header logo (`public/todo-project-logo.svg`), title `<h1>TODO: Project Name</h1>`, project description, feature list, and tech stack.
+- **Project Title & Logo ([`README.md`](README.md))**: Update the main project header logo (`public/brand/icons/todo-project-logo.svg`), title `<h1>TODO: Project Name</h1>`, project description, feature list, and tech stack.
 - **AI Agent Context ([`AGENTS.md`](AGENTS.md))**: Replace `# TODO: Project Title` and add project-specific directives and rules for AI coding agents.
 - **LLM Manifest ([`public/llms.txt`](public/llms.txt))**: Update `# TODO: Project Title` in the root LLM crawler policy.
 - **Community & Social Links ([`Contributors.md`](Contributors.md))**: Replace the `[TODO Channel](TODO)` placeholder with your project's Discord, Telegram, or chat channel link.
