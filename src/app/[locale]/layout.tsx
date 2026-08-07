@@ -45,13 +45,13 @@ export default async function RootLayout({
   // Await params since PageProps and LayoutProps are Promises in Next.js 15/16
   const { locale } = await params;
 
-  // Enable static rendering
-  setRequestLocale(locale);
-
   // Validate that the incoming `locale` is supported
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   // Provide messages to Client Components
   const messages = await getMessages({ locale });

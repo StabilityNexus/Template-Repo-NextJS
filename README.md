@@ -102,7 +102,7 @@ In the checklist below, mark the items that have been completed for your project
 - **Dual Theme System:** Flash-free light, dark, and system-preferred themes using `next-themes` and Tailwind CSS v4 custom variants.
 - **Robust i18n & l10n:** Deeply integrated multi-language support:
   - Automatic locale detection based on browser preferences.
-  - Subpath routing (e.g., `/hi` for Hindi, and unprefixed `/` for English as default) with clean `as-needed` URL prefixing.
+  - Subpath routing (e.g., `/hi` for Hindi, and `/en` for English as default) with clean URL prefixing.
   - Sleek, interactive language switcher client component.
   - Zero-bundle-size footprint for static translations using Server Components & Client `useTranslations`.
 - **Developer Experience:** Strict TypeScript compilation and ES Lint setup.
@@ -142,8 +142,8 @@ Here is a breakdown of the key i18n directories and files:
 │   │   ├── en.json             # English translation dictionary
 │   │   └── hi.json             # Hindi translation dictionary
 │   ├── app/
-│   │   ├── page.tsx            # Root page redirecting to default locale for static export
-│   │   ├── sitemap.ts          # Dynamically generated localized sitemaps
+│   │   ├── page.tsx            # Root page redirecting to default locale (/en) for static export
+│   │   ├── sitemap.ts          # Statically generated localized sitemaps
 │   │   └── [locale]/           # Localized route group
 │   │       ├── layout.tsx      # Multi-lingual layout injecting client context & translations
 │   │       ├── page.tsx        # Localized Landing Page ("use client")
@@ -318,11 +318,12 @@ Start the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it. The application will automatically detect your browser's language preferences and route you to `/hi` for Hindi or `/` for English (the default locale, which omits the prefix).
+Open [http://localhost:3000](http://localhost:3000) to view it. The application will automatically detect your browser's language preferences and route you to `/hi` for Hindi or `/en` for English (the default locale).
 
 ### Building for Production (Static Export)
 
 Compile and export the project into static HTML/CSS/JS assets for hosting on GitHub Pages:
+
 ```bash
 npm run build
 ```
