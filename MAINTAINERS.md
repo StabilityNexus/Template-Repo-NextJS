@@ -21,3 +21,7 @@ This document lists the individuals fulfilling the key roles of [Maintainer](htt
 | Name | GitHub Username | Discord Username | Area / Focus                     |
 | ---- | --------------- | ---------------- | -------------------------------- |
 | TODO | @username       | @discord_user    | Repository Maintenance & Merging |
+
+## 📜 Contribution Guidelines
+
+Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`DCO.md`](DCO.md) before submitting pull requests. All contributions are welcome!
