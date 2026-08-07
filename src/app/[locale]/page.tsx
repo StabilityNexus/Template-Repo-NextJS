@@ -1,31 +1,31 @@
-"use client";
-
 import Image from "next/image";
-import Script from "next/script";
-import { useTranslations } from "next-intl";
-import { use } from "react";
-import LanguageSwitcher from "../../components/LanguageSwitcher";
-import ThemeToggle from "../../components/ThemeToggle";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
-export default function Home({
+export default async function Home({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = use(params);
-  const t = useTranslations("Home");
+  const { locale } = await params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "Home" });
 
   // Schema.org Structured Data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "AOSSIE Webpage Starter",
+    "name": t("heading"),
     "description": t("metaDescription"),
     "publisher": {
       "@type": "Organization",
-      "name": "AOSSIE",
-      "url": "https://aossie.org",
-      "logo": "https://aossie.org/assets/icons/aossie_logo.svg",
+      "name": "TODO:AOSSIE",
+      "url": "https://TODO:project.aossie.org",
+      "logo": "https://TODO:project.aossie.org/brand/icons/aossie_logo.svg",
     },
     "inLanguage": locale,
   };
@@ -33,7 +33,7 @@ export default function Home({
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background-primary text-foreground-primary font-sans transition-colors duration-200">
       {/* Schema.org JSON-LD Structured Data */}
-      <Script
+      <script
         id="schema-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -42,7 +42,7 @@ export default function Home({
       <main className="flex w-full max-w-md flex-col items-center justify-center p-8 bg-background-secondary rounded-2xl border border-border-default shadow-card gap-6">
 
         <Image
-          src="/assets/icons/aossie_logo.svg"
+          src="/brand/icons/aossie_logo.svg"
           alt="AOSSIE Logo"
           width={80}
           height={80}
@@ -62,5 +62,3 @@ export default function Home({
     </div>
   );
 }
-
-

@@ -4,9 +4,9 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# AOSSIE Webpage Starter
+# TODO: Project Title
 
-Project specific context and directives for AI agents.
+TODO: Project-specific context and directives for AI agents.
 
 ## 🛠️ Stack & Commands
 
@@ -28,6 +28,7 @@ Project specific context and directives for AI agents.
 
 - **Dynamic segment:** All localized pages and layouts must be nested inside [`src/app/[locale]/`](src/app/[locale]/).
 - **Awaiting params:** Layout and Page `params` props are Promises in Next.js 15/16. Always `await params` before accessing `locale`.
+- **Static Export:** Call `setRequestLocale(locale)` in layout and page server components, and export `generateStaticParams()` to support static HTML export (`output: 'export'`).
 - **Navigation:** Never import `Link`, `useRouter`, or `usePathname` from standard `next/link` or `next/navigation`. Always import them from local configuration helpers in [`src/i18n/navigation.ts`](src/i18n/navigation.ts).
 
 ---
@@ -35,5 +36,5 @@ Project specific context and directives for AI agents.
 ## 📦 Project Boundaries
 
 - **Config alias map:** Webpack & Turbopack alias resolvers are manually defined in [`next.config.ts`](next.config.ts) mapping `"next-intl/config"` to our local request setup. Do not import the native `@swc/core` compiler plugin wrapper `createNextIntlPlugin` directly to avoid security policy native module blocks.
-- **Branding Assets:** The official branding logo, favicon, and style specifications reside inside [`brand/`](brand/).
+- **Branding Assets:** The official branding logo, favicon, and style specifications reside inside [`public/brand/`](public/brand/).
 

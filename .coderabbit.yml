@@ -226,8 +226,8 @@ reviews:
         Review test files for:
         - Comprehensive coverage of contract behavior
 
-    # Asset files (images, fonts, etc.)
-    - path: "assets/**/*"
+    # Asset files (icons, assets, images, fonts, etc.)
+    - path: "public/brand/**/*"
       instructions: |
         Review asset files for:
         - Image optimization (appropriate size and format)

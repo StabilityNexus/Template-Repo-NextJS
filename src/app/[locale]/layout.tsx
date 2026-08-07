@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { routing } from "../../i18n/routing";
+import { Inter, Noto_Sans_Devanagari } from "next/font/google";
+import { routing } from "@/i18n/routing";
+import { generateLocaleMetadata } from "@/i18n/metadata";
 import { notFound } from "next/navigation";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { ThemeProvider } from "../../components/providers/theme-provider";
-import { LenisProvider } from "../../components/providers/lenis-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { LenisProvider } from "@/components/providers/lenis-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,13 +14,26 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Aossie Webpage Starter",
-  description: "A multi-lingual starter template for Aossie organizations.",
-  icons: {
-    icon: "/assets/icons/favicon.ico",
-  },
-};
+const devanagari = Noto_Sans_Devanagari({
+  variable: "--font-devanagari",
+  subsets: ["devanagari"],
+});
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+  return generateLocaleMetadata(locale, "Home");
+}
 
 export default async function RootLayout({
   children,
@@ -36,13 +50,16 @@ export default async function RootLayout({
     notFound();
   }
 
+  // Enable static rendering
+  setRequestLocale(locale);
+
   // Provide messages to Client Components
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html
       lang={locale}
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${devanagari.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>

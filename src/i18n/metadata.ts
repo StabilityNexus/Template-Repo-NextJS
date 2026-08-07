@@ -7,18 +7,21 @@ export async function generateLocaleMetadata(
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace });
 
-  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://project.aossie.org';
+  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://TODO:project.aossie.org';
   const siteUrl = rawSiteUrl.replace(/\/$/, '');
-  const localeUrl = locale === 'en' ? siteUrl : `${siteUrl}/${locale}`;
+  const localeUrl = `${siteUrl}/${locale}`;
 
 
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    icons: {
+      icon: '/brand/icons/favicon.ico',
+    },
     alternates: {
       canonical: localeUrl,
       languages: {
-        en: siteUrl,
+        en: `${siteUrl}/en`,
         hi: `${siteUrl}/hi`,
       },
     },
@@ -30,7 +33,7 @@ export async function generateLocaleMetadata(
       siteName: 'AOSSIE',
       images: [
         {
-          url: `${siteUrl}/assets/icons/aossie_logo.svg`,
+          url: `${siteUrl}/brand/icons/aossie_logo.svg`,
           width: 500,
           height: 500,
           alt: 'AOSSIE Logo',
@@ -43,7 +46,7 @@ export async function generateLocaleMetadata(
       card: 'summary_large_image',
       title: t('metaTitle'),
       description: t('metaDescription'),
-      images: [`${siteUrl}/assets/icons/aossie_logo.svg`],
+      images: [`${siteUrl}/brand/icons/aossie_logo.svg`],
     },
   };
 }

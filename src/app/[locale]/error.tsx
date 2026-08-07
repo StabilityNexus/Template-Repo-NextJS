@@ -47,6 +47,7 @@ export default function ErrorBoundary({
         </div>
 
         <button
+          type="button"
           onClick={reset}
           className="flex h-10 items-center justify-center rounded-lg bg-button-primary-bg text-button-primary-text px-6 border border-button-primary-border hover:bg-button-primary-hover-bg transition-colors font-medium cursor-pointer"
         >

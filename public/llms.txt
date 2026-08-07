@@ -1,6 +1,7 @@
-# AOSSIE Webpage Starter Template
+# TODO: Project Title (AOSSIE Webpage Starter Template)
 
-This repository is a high-performance webpage starter template built on **Next.js 16 (App Router)**, **React 19**, and **Tailwind CSS v4**. It is pre-configured with **next-intl** for internationalization (i18n) and **next-themes** for semantic dark/light theme tokens.
+TODO: Project Description
+This repository is a high-performance webpage built on **Next.js 16 (App Router)**, **React 19**, and **Tailwind CSS v4**. It is pre-configured with **next-intl** for internationalization (i18n) and **next-themes** for semantic dark/light theme tokens.
 
 ---
 
@@ -8,7 +9,7 @@ This repository is a high-performance webpage starter template built on **Next.j
 
 - **`src/app/[locale]/`**: Localized dynamic route group. All pages and layouts live here.
 - **`src/app/sitemap.ts`**: Dynamically generates localized sitemaps.
-- **`brand/`**: Repository branding folder containing the logo, favicon, and brand specifications (`Brand.md`).
+- **`public/brand/`**: Repository branding folder containing the logo, favicon, and brand specifications (`Brand.md`).
 - **`src/config/languages.ts`**: Supported languages configuration list.
 - **`src/i18n/`**: Configurations for translation lookups and custom navigation helpers.
 - **`src/messages/`**: Directory containing translation catalogs (e.g., `en.json`, `hi.json`).

@@ -27,7 +27,11 @@
   --color-status-neutral-bg: var(--status-neutral-bg);
   --color-status-neutral-text: var(--status-neutral-text);
   
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-icon-sun: var(--icon-sun);
+  --color-icon-moon: var(--icon-moon);
+  --color-icon-system: var(--icon-system);
+
+  --font-sans: var(--font-inter), var(--font-devanagari), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* --- LIGHT MODE (Default) --- */
@@ -55,6 +59,10 @@
   --status-error-text: #dc2626;
   --status-neutral-bg: #f4f4f5;
   --status-neutral-text: #52525b;
+
+  --icon-sun: #f59e0b;
+  --icon-moon: #818cf8;
+  --icon-system: #71717a;
 }
 
 /* --- DARK MODE --- */
@@ -82,6 +90,10 @@
   --status-error-text: #f87171;
   --status-neutral-bg: #27272a;
   --status-neutral-text: #a1a1aa;
+
+  --icon-sun: #fbbf24;
+  --icon-moon: #818cf8;
+  --icon-system: #a1a1aa;
 }
 
 

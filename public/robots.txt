@@ -4,5 +4,5 @@ Disallow: /api/
 Disallow: /_vercel/
 
 
-# Replace the placeholder domain 'project.aossie.org' below with your actual project production domain.
-Sitemap: https://project.aossie.org/sitemap.xml
+# Replace the placeholder domain TODO:'project.aossie.org' below with your actual project production domain.
+Sitemap: https://TODO:project.aossie.org/sitemap.xml
