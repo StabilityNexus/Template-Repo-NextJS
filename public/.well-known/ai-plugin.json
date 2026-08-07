@@ -9,10 +9,10 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://TODO.project.aossie.org/openapi.yaml",
+    "url": "https://TODO:project.aossie.org/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://TODO.project.aossie.org/brand/icons/aossie_logo.svg",
+  "logo_url": "https://TODO:project.aossie.org/brand/icons/aossie_logo.svg",
   "contact_email": "admin@aossie.org",
-  "legal_info_url": "https://TODO.project.aossie.org/legal"
+  "legal_info_url": "https://TODO:project.aossie.org/legal"
 }

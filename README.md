@@ -4,7 +4,7 @@
 <!-- Organization Logo -->
 <div align="center" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
   <img src="public/brand/icons/aossie_logo.svg" width="175" alt="AOSSIE logo" >
-  <img src="public/todo-project-logo.svg" width="175" alt="TODO project's logo" />
+  <img src="public/TODO-project-logo.svg" width="175" alt="TODO: project's logo" />
 
 </div>
 
@@ -13,7 +13,7 @@
 <!-- Organization Name -->
 <div align="center">
 
-[![Static Badge](https://img.shields.io/badge/AOSSIE-Webpage--Starter-228B22?style=for-the-badge&labelColor=FFC517)](https://aossie.org/)
+[![Static Badge](https://img.shields.io/badge/TODO:(Project--NAME)AOSSIE-TODO:Webpage-228B22?style=for-the-badge&labelColor=FFC517)](https://TODO:project.aossie.org/)
 
 </div>
 
@@ -21,7 +21,7 @@
 <p align="center">
 <!-- Telegram -->
 <a href="https://t.me/+bMWGzaMTMa8xN2Ex">
-<img src="https://img.shields.io/badge/Telegram-black?style=flat&logo=telegram&logoColor=white&logoSize=auto&color=24A1DE" alt="Telegram Badge"/></a>
+<img src="https://img.shields.io/badge/Telegram AOSSIE-black?style=flat&logo=telegram&logoColor=white&logoSize=auto&color=24A1DE" alt="Telegram Badge"/></a>
 &nbsp;&nbsp;
 <!-- X (formerly Twitter) -->
 <a href="https://x.com/aossie_org">
@@ -29,20 +29,22 @@
 &nbsp;&nbsp;
 <!-- Discord AOSSIE-->
 <a href="https://discord.gg/hjUhu33uAn">
-<img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord&labelColor=5865F2&color=57F287" alt="Discord AOSSIE"/></a>
+<img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord AOSSIE&labelColor=5865F2&color=57F287" alt="Discord AOSSIE"/></a>
 <!-- Discord Stability Nexus-->
 <a href="https://discord.gg/YzDKeEfWtS">
-<img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord&labelColor=5865F2&color=57F287" alt="Discord Stability Nexus"/></a>
+<img src="https://img.shields.io/discord/995968619034984528?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord Stability Nexus&labelColor=5865F2&color=57F287" alt="Discord Stability Nexus"/></a>
 &nbsp;&nbsp;
 <!-- LinkedIn -->
 <a href="https://www.linkedin.com/company/aossie/">
-  <img src="https://img.shields.io/badge/LinkedIn-black?style=flat&logo=LinkedIn&logoColor=white&logoSize=auto&color=0A66C2" alt="LinkedIn Badge"></a>
+  <img src="https://img.shields.io/badge/LinkedIn AOSSIE-black?style=flat&logo=LinkedIn&logoColor=white&logoSize=auto&color=0A66C2" alt="LinkedIn Badge"></a>
 &nbsp;&nbsp;
 <!-- Youtube AOSSIE-->
 <a href="https://www.youtube.com/@AOSSIE-Org">
-  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube AOSSIE Badge"></a>
+  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white&label=Subscribe%20to%20AOSSIE&labelColor=FF0000&color=FF0000" alt="Subscribe to AOSSIE">
+</a>
 <a href="https://www.youtube.com/@StabilityNexus">
-  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Stability Nexus Badge"></a>
+  <img src="https://img.shields.io/youtube/channel/subscribers/UCZOG4YhFQdlGaLugr_e5BKw?style=flat&logo=youtube&logoColor=white&label=Subscribe%20to%20Stability%20Nexus&labelColor=FF0000&color=FF0000" alt="Subscribe to Stability Nexus">
+</a>
 </p>
 
 
@@ -52,7 +54,7 @@
 <h1>TODO: Project Name (AOSSIE Webpage Starter)</h1>
 </div>
 
-[TODO](https://TODO.aossie.org/) is a ... TODO: Project Description.
+TODO: Project Description.
 
 A high-performance, developer-friendly webpage built on **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and pre-configured for **Internationalization (i18n)** and **Localization (l10n)** using **next-intl**.
 
@@ -140,6 +142,7 @@ Here is a breakdown of the key i18n directories and files:
 │   │   ├── en.json             # English translation dictionary
 │   │   └── hi.json             # Hindi translation dictionary
 │   ├── app/
+│   │   ├── page.tsx            # Root page redirecting to default locale for static export
 │   │   ├── sitemap.ts          # Dynamically generated localized sitemaps
 │   │   └── [locale]/           # Localized route group
 │   │       ├── layout.tsx      # Multi-lingual layout injecting client context & translations
@@ -147,13 +150,12 @@ Here is a breakdown of the key i18n directories and files:
 │   │       ├── globals.css     # Global styles for the app segment
 │   │       ├── error.tsx       # Localized Error Boundary page fallback
 │   │       └── not-found.tsx   # Localized 404 page fallback
-│   ├── components/
-│   │   ├── LanguageSwitcher.tsx # Dropdown element to switch interface locales interactively
-│   │   ├── ThemeToggle.tsx      # Multi-state theme switch with micro-animations
-│   │   └── providers/
-│   │       ├── theme-provider.tsx # Next-themes client wrapper component
-│   │       └── lenis-provider.tsx # Lenis smooth scrolling provider wrapper
-│   └── proxy.ts                # Next.js 16 Proxy Middleware for route and locale redirection
+│   └── components/
+│       ├── LanguageSwitcher.tsx # Dropdown element to switch interface locales interactively
+│       ├── ThemeToggle.tsx      # Multi-state theme switch with micro-animations
+│       └── providers/
+│           ├── theme-provider.tsx # Next-themes client wrapper component
+│           └── lenis-provider.tsx # Lenis smooth scrolling provider wrapper
 ├── .coderabbit.yml         # Automated AI Code Review configuration
 ├── COPYRIGHT.md            # Copyright terms
 ├── Contributors.md         # Project contributors list
@@ -318,21 +320,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view it. The application will automatically detect your browser's language preferences and route you to `/hi` for Hindi or `/` for English (the default locale, which omits the prefix).
 
-### Building for Production
+### Building for Production (Static Export)
 
-Compile and optimize the project:
+Compile and export the project into static HTML/CSS/JS assets for hosting on GitHub Pages:
 ```bash
 npm run build
 ```
 
-This compiles optimized static pages under the `/[locale]` path and checks all TypeScript configurations.
-
-### Running in Production
-
-Start the optimized server:
-```bash
-npm run start
-```
+This generates an optimized static export in the `./out` directory, fully configured for client-side rendering and hosting on GitHub Pages.
 
 ---
 

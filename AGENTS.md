@@ -28,6 +28,7 @@ TODO: Project-specific context and directives for AI agents.
 
 - **Dynamic segment:** All localized pages and layouts must be nested inside [`src/app/[locale]/`](src/app/[locale]/).
 - **Awaiting params:** Layout and Page `params` props are Promises in Next.js 15/16. Always `await params` before accessing `locale`.
+- **Static Export:** Call `setRequestLocale(locale)` in layout and page server components, and export `generateStaticParams()` to support static HTML export (`output: 'export'`).
 - **Navigation:** Never import `Link`, `useRouter`, or `usePathname` from standard `next/link` or `next/navigation`. Always import them from local configuration helpers in [`src/i18n/navigation.ts`](src/i18n/navigation.ts).
 
 ---

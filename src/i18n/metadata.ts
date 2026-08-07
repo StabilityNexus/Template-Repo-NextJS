@@ -7,7 +7,7 @@ export async function generateLocaleMetadata(
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace });
 
-  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://project.aossie.org';
+  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://TODO:project.aossie.org';
   const siteUrl = rawSiteUrl.replace(/\/$/, '');
   const localeUrl = locale === 'en' ? siteUrl : `${siteUrl}/${locale}`;
 
@@ -15,6 +15,9 @@ export async function generateLocaleMetadata(
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    icons: {
+      icon: '/brand/icons/favicon.ico',
+    },
     alternates: {
       canonical: localeUrl,
       languages: {

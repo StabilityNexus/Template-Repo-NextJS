@@ -1,5 +1,6 @@
 # TODO: Project Title (AOSSIE Webpage Starter Template)
 
+TODO: Project Description
 This repository is a high-performance webpage built on **Next.js 16 (App Router)**, **React 19**, and **Tailwind CSS v4**. It is pre-configured with **next-intl** for internationalization (i18n) and **next-themes** for semantic dark/light theme tokens.
 
 ---

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Script from "next/script";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -10,6 +9,10 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "Home" });
 
   // Schema.org Structured Data
@@ -21,8 +24,8 @@ export default async function Home({
     "publisher": {
       "@type": "Organization",
       "name": "TODO:AOSSIE",
-      "url": "https://TODO.project.aossie.org",
-      "logo": "https://TODO.project.aossie.org/brand/icons/aossie_logo.svg",
+      "url": "https://TODO:project.aossie.org",
+      "logo": "https://TODO:project.aossie.org/brand/icons/aossie_logo.svg",
     },
     "inLanguage": locale,
   };
@@ -30,7 +33,7 @@ export default async function Home({
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-background-primary text-foreground-primary font-sans transition-colors duration-200">
       {/* Schema.org JSON-LD Structured Data */}
-      <Script
+      <script
         id="schema-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
