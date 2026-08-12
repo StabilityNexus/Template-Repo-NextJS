@@ -19,6 +19,8 @@ const devanagari = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
 });
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
