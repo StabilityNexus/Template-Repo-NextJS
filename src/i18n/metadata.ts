@@ -1,20 +1,20 @@
-import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { messagesMap, defaultMessages, Messages } from './messages';
 
 export async function generateLocaleMetadata(
   locale: string,
-  namespace: string
+  namespace: 'Home' = 'Home'
 ): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace });
+  const messages = (messagesMap[locale] || defaultMessages) as Messages;
+  const meta = messages[namespace] || defaultMessages.Home;
 
   const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://TODO:project.aossie.org';
   const siteUrl = rawSiteUrl.replace(/\/$/, '');
   const localeUrl = `${siteUrl}/${locale}`;
 
-
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: meta.metaTitle,
+    description: meta.metaDescription,
     icons: {
       icon: '/brand/icons/favicon.ico',
     },
@@ -26,10 +26,9 @@ export async function generateLocaleMetadata(
       },
     },
     openGraph: {
-      title: t('metaTitle'),
-      description: t('metaDescription'),
+      title: meta.metaTitle,
+      description: meta.metaDescription,
       url: localeUrl,
-
       siteName: 'AOSSIE',
       images: [
         {
@@ -44,9 +43,10 @@ export async function generateLocaleMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: t('metaTitle'),
-      description: t('metaDescription'),
+      title: meta.metaTitle,
+      description: meta.metaDescription,
       images: [`${siteUrl}/brand/icons/aossie_logo.svg`],
     },
   };
 }
+
