@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
-import enMessages from '../messages/en.json';
-import hiMessages from '../messages/hi.json';
-
-const messagesMap: Record<string, typeof enMessages> = {
-  en: enMessages,
-  hi: hiMessages,
-};
+import { messagesMap, defaultMessages, Messages } from './messages';
 
 export async function generateLocaleMetadata(
   locale: string,
-  namespace: keyof typeof enMessages = 'Home'
+  namespace: 'Home' = 'Home'
 ): Promise<Metadata> {
-  const messages = messagesMap[locale] || enMessages;
-  const meta = (messages[namespace] as typeof enMessages.Home) || enMessages.Home;
+  const messages = (messagesMap[locale] || defaultMessages) as Messages;
+  const meta = messages[namespace] || defaultMessages.Home;
 
   const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://TODO:project.aossie.org';
   const siteUrl = rawSiteUrl.replace(/\/$/, '');

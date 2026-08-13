@@ -5,16 +5,10 @@ import { generateLocaleMetadata } from "@/i18n/metadata";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import enMessages from "@/messages/en.json";
-import hiMessages from "@/messages/hi.json";
+import { messagesMap, defaultMessages } from "@/i18n/messages";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import "./globals.css";
-
-const messagesMap: Record<string, Record<string, unknown>> = {
-  en: enMessages as Record<string, unknown>,
-  hi: hiMessages as Record<string, unknown>,
-};
 
 const inter = Inter({
   variable: "--font-inter",
@@ -66,7 +60,7 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   // Provide messages to Client Components directly via messagesMap
-  const messages = messagesMap[locale] || enMessages;
+  const messages = messagesMap[locale] || defaultMessages;
 
   return (
     <html
@@ -86,4 +80,5 @@ export default async function RootLayout({
     </html>
   );
 }
+
 
